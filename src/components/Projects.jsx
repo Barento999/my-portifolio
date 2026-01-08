@@ -130,7 +130,7 @@ const Projects = () => {
                 <h3 className="text-xl font-bold mb-2 gradient-text group-hover:scale-105 transition-transform duration-300 inline-block">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
                   {project.description}
                 </p>
 
@@ -138,7 +138,7 @@ const Projects = () => {
                   {project.techStack.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 glass-effect text-gray-700 text-xs font-medium rounded-lg hover:scale-110 transition-transform">
+                      className="px-3 py-1 glass-effect text-gray-700 dark:text-gray-300 text-xs font-medium rounded-lg hover:scale-110 transition-transform">
                       {tech}
                     </span>
                   ))}
@@ -150,7 +150,7 @@ const Projects = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-primary-600 hover:text-purple-600 text-sm font-semibold hover:scale-110 transition-all">
+                      className="flex items-center gap-1 text-primary-600 dark:text-primary-400 hover:text-purple-600 dark:hover:text-purple-400 text-sm font-semibold hover:scale-110 transition-all">
                       <ExternalLink size={16} /> Live Demo
                     </a>
                   )}
@@ -159,7 +159,7 @@ const Projects = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-gray-700 hover:text-gray-900 text-sm font-semibold hover:scale-110 transition-all">
+                      className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 text-sm font-semibold hover:scale-110 transition-all">
                       <Github size={16} /> Code
                     </a>
                   )}

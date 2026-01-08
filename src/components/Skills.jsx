@@ -69,7 +69,12 @@ const Skills = () => {
         },
         { name: "Python", icon: SiPython, color: "text-blue-500", level: 80 },
         { name: "PHP", icon: SiPhp, color: "text-indigo-600", level: 75 },
-        { name: "Express", icon: SiExpress, color: "text-gray-700", level: 80 },
+        {
+          name: "Express",
+          icon: SiExpress,
+          color: "text-gray-700 dark:text-gray-300",
+          level: 80,
+        },
         {
           name: "MongoDB",
           icon: SiMongodb,
@@ -83,7 +88,12 @@ const Skills = () => {
       title: "Tools & Others",
       skills: [
         { name: "Git", icon: SiGit, color: "text-orange-600", level: 85 },
-        { name: "GitHub", icon: SiGithub, color: "text-gray-900", level: 85 },
+        {
+          name: "GitHub",
+          icon: SiGithub,
+          color: "text-gray-900 dark:text-gray-100",
+          level: 85,
+        },
         {
           name: "VS Code",
           icon: Code2,
@@ -116,20 +126,22 @@ const Skills = () => {
               {category.skills.map((skill, skillIdx) => (
                 <div
                   key={skillIdx}
-                  className="group hover:bg-gradient-to-r hover:from-primary-50 hover:to-purple-50 p-3 rounded-lg transition-all duration-300">
+                  className="group hover:bg-gradient-to-r hover:from-primary-50 hover:to-purple-50 dark:hover:from-primary-900/20 dark:hover:to-purple-900/20 p-3 rounded-lg transition-all duration-300">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
                       <skill.icon
                         className={`${skill.color} group-hover:scale-125 transition-transform duration-300`}
                         size={24}
                       />
-                      <span className="font-semibold">{skill.name}</span>
+                      <span className="font-semibold dark:text-gray-200">
+                        {skill.name}
+                      </span>
                     </div>
-                    <span className="text-sm text-gray-600 font-bold">
+                    <span className="text-sm text-gray-600 dark:text-gray-400 font-bold">
                       {skill.level}%
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden shadow-inner">
+                  <div className="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-2.5 overflow-hidden shadow-inner">
                     <div
                       className={`bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 h-2.5 rounded-full transition-all duration-1000 shadow-lg ${
                         isVisible ? "animate-progress" : "w-0"
@@ -161,7 +173,7 @@ const Skills = () => {
           ].map((concept, idx) => (
             <span
               key={idx}
-              className="px-5 py-2 glass-effect rounded-full text-sm font-semibold hover:scale-110 transition-all cursor-default animate-fade-in"
+              className="px-5 py-2 glass-effect rounded-full text-sm font-semibold dark:text-gray-200 hover:scale-110 transition-all cursor-default animate-fade-in"
               style={{ animationDelay: `${idx * 50}ms` }}>
               {concept}
             </span>

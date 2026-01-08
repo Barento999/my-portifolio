@@ -80,7 +80,7 @@ const Experience = () => {
       <div className="max-w-4xl mx-auto">
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-200 via-purple-200 to-pink-200 hidden md:block rounded-full"></div>
+          <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-200 via-purple-200 to-pink-200 dark:from-primary-900/50 dark:via-purple-900/50 dark:to-pink-900/50 hidden md:block rounded-full"></div>
 
           {timeline.map((item, idx) => (
             <div
@@ -102,11 +102,11 @@ const Experience = () => {
                     <h3 className="text-xl font-bold gradient-text mb-1 group-hover:scale-105 transition-transform inline-block">
                       {item.title}
                     </h3>
-                    <p className="text-gray-700 font-semibold flex items-center gap-2">
+                    <p className="text-gray-700 dark:text-gray-300 font-semibold flex items-center gap-2">
                       <Briefcase size={16} className="text-primary-600" />
                       {item.organization}
                     </p>
-                    <div className="flex flex-wrap gap-3 mt-2 text-sm text-gray-600">
+                    <div className="flex flex-wrap gap-3 mt-2 text-sm text-gray-600 dark:text-gray-400">
                       <span className="flex items-center gap-1">
                         <Calendar size={14} className="text-purple-600" />
                         {item.period}
@@ -119,7 +119,7 @@ const Experience = () => {
                   </div>
                 </div>
 
-                <p className="text-gray-700 mb-4 leading-relaxed">
+                <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                   {item.description}
                 </p>
 
@@ -127,9 +127,9 @@ const Experience = () => {
                   {item.highlights.map((highlight, hIdx) => (
                     <div
                       key={hIdx}
-                      className="flex items-start gap-3 p-2 rounded-lg hover:bg-gradient-to-r hover:from-primary-50 hover:to-purple-50 transition-all duration-300 group/item">
+                      className="flex items-start gap-3 p-2 rounded-lg hover:bg-gradient-to-r hover:from-primary-50 hover:to-purple-50 dark:hover:from-primary-900/20 dark:hover:to-purple-900/20 transition-all duration-300 group/item">
                       <span className="w-2 h-2 bg-gradient-to-r from-primary-600 to-purple-600 rounded-full mt-1.5 group-hover/item:scale-150 transition-transform"></span>
-                      <span className="text-sm text-gray-700 font-medium">
+                      <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">
                         {highlight}
                       </span>
                     </div>

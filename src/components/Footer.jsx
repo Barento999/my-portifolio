@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart, Code, Sparkles } from "lucide-react";
+import { Github, Linkedin, Mail, Heart, Sparkles } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,7 +14,7 @@ const Footer = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Content */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Logo & Description */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start mb-4 group">
@@ -32,30 +32,6 @@ const Footer = () => {
               Full-Stack Developer & AI/ML Enthusiast crafting innovative
               digital experiences
             </p>
-          </div>
-
-          {/* Quick Links */}
-          <div className="text-center">
-            <h4 className="text-lg font-semibold mb-4 flex items-center justify-center gap-2">
-              <Code size={18} className="text-primary-400" />
-              Quick Links
-            </h4>
-            <div className="space-y-2">
-              {["About", "Skills", "Projects", "Experience", "Contact"].map(
-                (link) => (
-                  <button
-                    key={link}
-                    onClick={() =>
-                      document
-                        .getElementById(link.toLowerCase())
-                        ?.scrollIntoView({ behavior: "smooth" })
-                    }
-                    className="block w-full text-gray-400 hover:text-primary-400 transition-colors duration-300 text-sm hover:translate-x-1 transform">
-                    {link}
-                  </button>
-                )
-              )}
-            </div>
           </div>
 
           {/* Connect */}
@@ -94,7 +70,6 @@ const Footer = () => {
                 />
               </a>
             </div>
-            <p className="text-gray-400 text-sm">barentohashum11@gmail.com</p>
           </div>
         </div>
 

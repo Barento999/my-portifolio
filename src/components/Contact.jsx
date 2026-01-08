@@ -42,7 +42,7 @@ const Contact = () => {
       <div className="text-center mb-12 animate-fade-in">
         <h2 className="text-4xl font-bold gradient-text mb-4">Get In Touch</h2>
         <div className="w-20 h-1 bg-gradient-to-r from-primary-600 to-purple-600 mx-auto rounded-full"></div>
-        <p className="text-gray-700 mt-4 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-gray-700 dark:text-gray-300 mt-4 max-w-2xl mx-auto leading-relaxed">
           I'm currently looking for internship opportunities and freelance
           projects. Feel free to reach out if you'd like to work together!
         </p>
@@ -56,50 +56,54 @@ const Contact = () => {
           </h3>
 
           <div className="space-y-4">
-            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 transition-all duration-300 group">
+            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all duration-300 group">
               <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
                 <Mail className="text-white" size={24} />
               </div>
               <div>
-                <h4 className="font-semibold mb-1">Email</h4>
+                <h4 className="font-semibold mb-1 dark:text-gray-200">Email</h4>
                 <a
                   href="mailto:barentohashum11@gmail.com"
-                  className="text-gray-600 hover:text-primary-600 transition-colors">
+                  className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                   barentohashum11@gmail.com
                 </a>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 transition-all duration-300 group">
+            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all duration-300 group">
               <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
                 <Phone className="text-white" size={24} />
               </div>
               <div>
-                <h4 className="font-semibold mb-1">Phone</h4>
+                <h4 className="font-semibold mb-1 dark:text-gray-200">Phone</h4>
                 <a
                   href="tel:+251930873999"
-                  className="text-gray-600 hover:text-primary-600 transition-colors">
+                  className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                   +251 930 873 999
                 </a>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 transition-all duration-300 group">
+            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all duration-300 group">
               <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-primary-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
                 <MapPin className="text-white" size={24} />
               </div>
               <div>
-                <h4 className="font-semibold mb-1">Location</h4>
-                <p className="text-gray-600">Harar, Ethiopia</p>
+                <h4 className="font-semibold mb-1 dark:text-gray-200">
+                  Location
+                </h4>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Harar, Ethiopia
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="mt-8 p-6 glass-effect rounded-2xl border-2 border-primary-200 animate-glow">
+          <div className="mt-8 p-6 glass-effect rounded-2xl border-2 border-primary-200 dark:border-primary-800 animate-glow">
             <h4 className="font-bold mb-2 gradient-text">
               Open to Opportunities
             </h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
               I'm actively seeking internship positions and freelance projects.
               Let's build something amazing together!
             </p>
@@ -112,7 +116,7 @@ const Contact = () => {
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-semibold text-gray-700 mb-2">
+                className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                 Name
               </label>
               <input
@@ -122,7 +126,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all duration-300 hover:border-primary-300"
+                className="w-full px-4 py-3 border-2 border-gray-200 dark:border-slate-700 dark:bg-slate-800 dark:text-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all duration-300 hover:border-primary-300 dark:hover:border-primary-700"
                 placeholder="Your name"
               />
             </div>
@@ -130,7 +134,7 @@ const Contact = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-semibold text-gray-700 mb-2">
+                className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                 Email
               </label>
               <input
@@ -140,7 +144,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all duration-300 hover:border-primary-300"
+                className="w-full px-4 py-3 border-2 border-gray-200 dark:border-slate-700 dark:bg-slate-800 dark:text-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all duration-300 hover:border-primary-300 dark:hover:border-primary-700"
                 placeholder="your.email@example.com"
               />
             </div>
@@ -148,7 +152,7 @@ const Contact = () => {
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-semibold text-gray-700 mb-2">
+                className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                 Message
               </label>
               <textarea
@@ -158,7 +162,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows="5"
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none resize-none transition-all duration-300 hover:border-primary-300"
+                className="w-full px-4 py-3 border-2 border-gray-200 dark:border-slate-700 dark:bg-slate-800 dark:text-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none resize-none transition-all duration-300 hover:border-primary-300 dark:hover:border-primary-700"
                 placeholder="Your message..."></textarea>
             </div>
 

@@ -20,7 +20,7 @@ const About = () => {
           <h3 className="text-2xl font-bold mb-4 gradient-text">
             Full-Stack Developer & AI/ML Enthusiast
           </h3>
-          <p className="text-gray-700 mb-4 leading-relaxed">
+          <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
             I'm a passionate Software Engineering student with a strong focus on
             full-stack web development and{" "}
             <span className="font-bold gradient-text">
@@ -29,7 +29,7 @@ const About = () => {
             . I specialize in building modern, scalable applications using
             React, Node.js, and MongoDB.
           </p>
-          <p className="text-gray-700 mb-6 leading-relaxed">
+          <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
             My journey in software development is driven by curiosity and a
             desire to create intelligent solutions that make a real impact. I'm
             particularly interested in combining web development with AI/ML to
@@ -37,50 +37,56 @@ const About = () => {
           </p>
 
           <div className="grid grid-cols-2 gap-4">
-            <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/50 transition-all duration-300 group">
+            <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all duration-300 group">
               <Code
                 className="text-primary-600 mt-1 group-hover:scale-125 transition-transform"
                 size={24}
               />
               <div>
-                <h4 className="font-semibold">Clean Code</h4>
-                <p className="text-sm text-gray-600">
+                <h4 className="font-semibold dark:text-gray-200">Clean Code</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   Writing maintainable, scalable code
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/50 transition-all duration-300 group">
+            <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all duration-300 group">
               <Lightbulb
                 className="text-purple-600 mt-1 group-hover:scale-125 transition-transform"
                 size={24}
               />
               <div>
-                <h4 className="font-semibold">Problem Solver</h4>
-                <p className="text-sm text-gray-600">
+                <h4 className="font-semibold dark:text-gray-200">
+                  Problem Solver
+                </h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   Creative solutions to complex challenges
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/50 transition-all duration-300 group">
+            <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all duration-300 group">
               <Target
                 className="text-pink-600 mt-1 group-hover:scale-125 transition-transform"
                 size={24}
               />
               <div>
-                <h4 className="font-semibold">Goal-Oriented</h4>
-                <p className="text-sm text-gray-600">
+                <h4 className="font-semibold dark:text-gray-200">
+                  Goal-Oriented
+                </h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   Focused on delivering results
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/50 transition-all duration-300 group">
+            <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all duration-300 group">
               <Users
                 className="text-blue-600 mt-1 group-hover:scale-125 transition-transform"
                 size={24}
               />
               <div>
-                <h4 className="font-semibold">Team Player</h4>
-                <p className="text-sm text-gray-600">
+                <h4 className="font-semibold dark:text-gray-200">
+                  Team Player
+                </h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   Collaborative and communicative
                 </p>
               </div>

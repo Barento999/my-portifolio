@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isDark, setIsDark] = useState(() => {
+    const saved = localStorage.getItem("theme");
+    return saved
+      ? saved === "dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +18,20 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDark]);
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+  };
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -42,36 +62,54 @@ const Navbar = () => {
           </button>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-2 bg-white/60 backdrop-blur-md rounded-full px-6 py-2 shadow-lg border border-white/40">
-            {[
-              "home",
-              "about",
-              "skills",
-              "projects",
-              "experience",
-              "contact",
-            ].map((section) => (
-              <button
-                key={section}
-                onClick={() => scrollToSection(section)}
-                className="px-4 py-2 text-gray-700 hover:text-white font-semibold capitalize transition-all duration-300 rounded-full hover:bg-gradient-to-r hover:from-primary-600 hover:to-purple-600 hover:scale-105 hover:shadow-md">
-                {section}
-              </button>
-            ))}
+          <div className="hidden md:flex items-center gap-2">
+            <div className="flex items-center gap-2 bg-white/60 dark:bg-slate-800/80 backdrop-blur-md rounded-full px-6 py-2 shadow-lg border border-white/40 dark:border-slate-700/50">
+              {[
+                "home",
+                "about",
+                "skills",
+                "projects",
+                "experience",
+                "contact",
+              ].map((section) => (
+                <button
+                  key={section}
+                  onClick={() => scrollToSection(section)}
+                  className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-white font-semibold capitalize transition-all duration-300 rounded-full hover:bg-gradient-to-r hover:from-primary-600 hover:to-purple-600 hover:scale-105 hover:shadow-md">
+                  {section}
+                </button>
+              ))}
+            </div>
+
+            {/* Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="p-2.5 rounded-xl bg-white/60 dark:bg-slate-800/80 backdrop-blur-md border border-white/40 dark:border-slate-700/50 text-gray-700 dark:text-gray-300 hover:bg-gradient-to-br hover:from-primary-600 hover:to-purple-600 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg"
+              aria-label="Toggle theme">
+              {isDark ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2.5 rounded-xl bg-gradient-to-br from-primary-600 to-purple-600 text-white hover:shadow-lg transition-all duration-300 hover:scale-110">
-            {isOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          {/* Mobile Menu Button & Theme Toggle */}
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              className="p-2.5 rounded-xl bg-white/60 dark:bg-slate-800/80 backdrop-blur-md border border-white/40 dark:border-slate-700/50 text-gray-700 dark:text-gray-300 hover:bg-gradient-to-br hover:from-primary-600 hover:to-purple-600 hover:text-white transition-all duration-300 hover:scale-110"
+              aria-label="Toggle theme">
+              {isDark ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2.5 rounded-xl bg-gradient-to-br from-primary-600 to-purple-600 text-white hover:shadow-lg transition-all duration-300 hover:scale-110">
+              {isOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden glass-effect border-t border-white/20 animate-fade-in shadow-xl">
+        <div className="md:hidden glass-effect border-t border-white/20 dark:border-slate-700/50 animate-fade-in shadow-xl">
           <div className="px-4 pt-3 pb-4 space-y-2">
             {[
               "home",
@@ -84,7 +122,7 @@ const Navbar = () => {
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className="block w-full text-left px-4 py-3 text-gray-700 font-semibold capitalize hover:bg-gradient-to-r hover:from-primary-50 hover:to-purple-50 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-md border border-transparent hover:border-primary-200">
+                className="block w-full text-left px-4 py-3 text-gray-700 dark:text-gray-300 font-semibold capitalize hover:bg-gradient-to-r hover:from-primary-50 hover:to-purple-50 dark:hover:from-primary-900/30 dark:hover:to-purple-900/30 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-md border border-transparent hover:border-primary-200 dark:hover:border-primary-700">
                 {section}
               </button>
             ))}
