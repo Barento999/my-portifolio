@@ -39,10 +39,10 @@ const Contact = () => {
 
   return (
     <section id="contact" className="section-container">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-        <div className="w-20 h-1 bg-primary-600 mx-auto"></div>
-        <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+      <div className="text-center mb-12 animate-fade-in">
+        <h2 className="text-4xl font-bold gradient-text mb-4">Get In Touch</h2>
+        <div className="w-20 h-1 bg-gradient-to-r from-primary-600 to-purple-600 mx-auto rounded-full"></div>
+        <p className="text-gray-700 mt-4 max-w-2xl mx-auto leading-relaxed">
           I'm currently looking for internship opportunities and freelance
           projects. Feel free to reach out if you'd like to work together!
         </p>
@@ -50,52 +50,56 @@ const Contact = () => {
 
       <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
         {/* Contact Info */}
-        <div>
-          <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+        <div className="animate-slide-in-left">
+          <h3 className="text-2xl font-bold mb-6 gradient-text">
+            Contact Information
+          </h3>
 
           <div className="space-y-4">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Mail className="text-primary-600" size={24} />
+            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 transition-all duration-300 group">
+              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
+                <Mail className="text-white" size={24} />
               </div>
               <div>
                 <h4 className="font-semibold mb-1">Email</h4>
                 <a
-                  href="mailto:barento@example.com"
-                  className="text-gray-600 hover:text-primary-600">
-                  barento@example.com
+                  href="mailto:barentohashum11@gmail.com"
+                  className="text-gray-600 hover:text-primary-600 transition-colors">
+                  barentohashum11@gmail.com
                 </a>
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Phone className="text-primary-600" size={24} />
+            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 transition-all duration-300 group">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
+                <Phone className="text-white" size={24} />
               </div>
               <div>
                 <h4 className="font-semibold mb-1">Phone</h4>
                 <a
-                  href="tel:+1234567890"
-                  className="text-gray-600 hover:text-primary-600">
-                  +1 (234) 567-890
+                  href="tel:+251930873999"
+                  className="text-gray-600 hover:text-primary-600 transition-colors">
+                  +251 930 873 999
                 </a>
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <MapPin className="text-primary-600" size={24} />
+            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 transition-all duration-300 group">
+              <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-primary-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
+                <MapPin className="text-white" size={24} />
               </div>
               <div>
                 <h4 className="font-semibold mb-1">Location</h4>
-                <p className="text-gray-600">City, Country</p>
+                <p className="text-gray-600">Harar, Ethiopia</p>
               </div>
             </div>
           </div>
 
-          <div className="mt-8 p-6 bg-primary-50 rounded-lg">
-            <h4 className="font-semibold mb-2">Open to Opportunities</h4>
-            <p className="text-sm text-gray-600">
+          <div className="mt-8 p-6 glass-effect rounded-2xl border-2 border-primary-200 animate-glow">
+            <h4 className="font-bold mb-2 gradient-text">
+              Open to Opportunities
+            </h4>
+            <p className="text-sm text-gray-700 leading-relaxed">
               I'm actively seeking internship positions and freelance projects.
               Let's build something amazing together!
             </p>
@@ -103,12 +107,12 @@ const Contact = () => {
         </div>
 
         {/* Contact Form */}
-        <div>
+        <div className="animate-slide-in-right">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-gray-700 mb-1">
+                className="block text-sm font-semibold text-gray-700 mb-2">
                 Name
               </label>
               <input
@@ -118,7 +122,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent outline-none"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all duration-300 hover:border-primary-300"
                 placeholder="Your name"
               />
             </div>
@@ -126,7 +130,7 @@ const Contact = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700 mb-1">
+                className="block text-sm font-semibold text-gray-700 mb-2">
                 Email
               </label>
               <input
@@ -136,7 +140,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent outline-none"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all duration-300 hover:border-primary-300"
                 placeholder="your.email@example.com"
               />
             </div>
@@ -144,7 +148,7 @@ const Contact = () => {
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-gray-700 mb-1">
+                className="block text-sm font-semibold text-gray-700 mb-2">
                 Message
               </label>
               <textarea
@@ -154,16 +158,16 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows="5"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent outline-none resize-none"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none resize-none transition-all duration-300 hover:border-primary-300"
                 placeholder="Your message..."></textarea>
             </div>
 
             {status.message && (
               <div
-                className={`p-4 rounded-lg ${
+                className={`p-4 rounded-xl font-medium animate-fade-in ${
                   status.type === "success"
-                    ? "bg-green-50 text-green-700"
-                    : "bg-red-50 text-red-700"
+                    ? "bg-green-100 text-green-700 border-2 border-green-300"
+                    : "bg-red-100 text-red-700 border-2 border-red-300"
                 }`}>
                 {status.message}
               </div>
@@ -174,7 +178,10 @@ const Contact = () => {
               disabled={loading}
               className="w-full btn-primary flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
               {loading ? (
-                "Sending..."
+                <span className="flex items-center gap-2">
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  Sending...
+                </span>
               ) : (
                 <>
                   <Send size={20} /> Send Message

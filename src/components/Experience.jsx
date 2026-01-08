@@ -1,4 +1,10 @@
-import { GraduationCap, Briefcase, Award } from "lucide-react";
+import {
+  GraduationCap,
+  Briefcase,
+  Award,
+  Calendar,
+  MapPin,
+} from "lucide-react";
 
 const Experience = () => {
   const timeline = [
@@ -6,24 +12,30 @@ const Experience = () => {
       type: "education",
       icon: GraduationCap,
       title: "Bachelor of Software Engineering",
-      organization: "University Name",
+      organization: "Haramaya University",
+      location: "Harar, Ethiopia",
       period: "2022 - Present",
       description:
         "Studying software engineering with focus on web development, algorithms, and system design.",
-      highlights: ["GPA: 3.8/4.0", "Dean's List", "Active in coding clubs"],
+      highlights: [
+        "Dean's List",
+        "Active in coding clubs",
+        "Full-stack development focus",
+      ],
     },
     {
       type: "project",
       icon: Briefcase,
       title: "Full-Stack Developer",
       organization: "Academic Projects",
+      location: "Remote",
       period: "2023 - Present",
       description:
         "Built multiple full-stack applications using MERN stack for coursework and personal learning.",
       highlights: [
-        "E-commerce platform",
-        "Task management system",
-        "REST API services",
+        "E-commerce platform with Firebase",
+        "Project management system",
+        "REST API services with JWT auth",
       ],
     },
     {
@@ -31,6 +43,7 @@ const Experience = () => {
       icon: Award,
       title: "Web Development Certifications",
       organization: "Online Learning Platforms",
+      location: "Online",
       period: "2023",
       description:
         "Completed comprehensive courses in modern web development technologies.",
@@ -42,55 +55,86 @@ const Experience = () => {
     },
   ];
 
+  const getTypeColor = (type) => {
+    switch (type) {
+      case "education":
+        return "from-blue-500 to-cyan-500";
+      case "project":
+        return "from-purple-500 to-pink-500";
+      case "certification":
+        return "from-orange-500 to-red-500";
+      default:
+        return "from-primary-500 to-purple-500";
+    }
+  };
+
   return (
     <section id="experience" className="section-container">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">
+      <div className="text-center mb-12 animate-fade-in">
+        <h2 className="text-4xl font-bold gradient-text mb-4">
           Experience & Education
         </h2>
-        <div className="w-20 h-1 bg-primary-600 mx-auto"></div>
+        <div className="w-20 h-1 bg-gradient-to-r from-primary-600 to-purple-600 mx-auto rounded-full"></div>
       </div>
 
       <div className="max-w-4xl mx-auto">
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary-200 hidden md:block"></div>
+          <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-200 via-purple-200 to-pink-200 hidden md:block rounded-full"></div>
 
           {timeline.map((item, idx) => (
-            <div key={idx} className="relative mb-12 md:ml-16">
+            <div
+              key={idx}
+              className="relative mb-12 md:ml-16 animate-fade-in-up"
+              style={{ animationDelay: `${idx * 200}ms` }}>
               {/* Timeline Icon */}
-              <div className="absolute -left-16 top-0 hidden md:flex items-center justify-center w-16 h-16 bg-primary-600 rounded-full text-white">
+              <div
+                className={`absolute -left-16 top-0 hidden md:flex items-center justify-center w-16 h-16 bg-gradient-to-br ${getTypeColor(
+                  item.type
+                )} rounded-full text-white shadow-lg animate-float`}>
                 <item.icon size={24} />
               </div>
 
               {/* Content Card */}
-              <div className="card p-6">
-                <div className="flex items-start justify-between mb-2">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">
+              <div className="card p-6 group hover:scale-[1.02] transition-all duration-300">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 gap-2">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold gradient-text mb-1 group-hover:scale-105 transition-transform inline-block">
                       {item.title}
                     </h3>
-                    <p className="text-primary-600 font-medium">
+                    <p className="text-gray-700 font-semibold flex items-center gap-2">
+                      <Briefcase size={16} className="text-primary-600" />
                       {item.organization}
                     </p>
+                    <div className="flex flex-wrap gap-3 mt-2 text-sm text-gray-600">
+                      <span className="flex items-center gap-1">
+                        <Calendar size={14} className="text-purple-600" />
+                        {item.period}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <MapPin size={14} className="text-pink-600" />
+                        {item.location}
+                      </span>
+                    </div>
                   </div>
-                  <span className="text-sm text-gray-500 whitespace-nowrap ml-4">
-                    {item.period}
-                  </span>
                 </div>
 
-                <p className="text-gray-600 mb-4">{item.description}</p>
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  {item.description}
+                </p>
 
-                <ul className="space-y-1">
+                <div className="space-y-2">
                   {item.highlights.map((highlight, hIdx) => (
-                    <li
+                    <div
                       key={hIdx}
-                      className="text-sm text-gray-700 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-primary-600 rounded-full"></span>
-                      {highlight}
-                    </li>
+                      className="flex items-start gap-3 p-2 rounded-lg hover:bg-gradient-to-r hover:from-primary-50 hover:to-purple-50 transition-all duration-300 group/item">
+                      <span className="w-2 h-2 bg-gradient-to-r from-primary-600 to-purple-600 rounded-full mt-1.5 group-hover/item:scale-150 transition-transform"></span>
+                      <span className="text-sm text-gray-700 font-medium">
+                        {highlight}
+                      </span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             </div>
           ))}

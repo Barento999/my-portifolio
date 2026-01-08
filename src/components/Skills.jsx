@@ -97,41 +97,41 @@ const Skills = () => {
   return (
     <section id="skills" className="section-container">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">
+        <h2 className="text-4xl font-bold gradient-text mb-4 animate-fade-in">
           Skills & Technologies
         </h2>
-        <div className="w-20 h-1 bg-primary-600 mx-auto"></div>
+        <div className="w-20 h-1 bg-gradient-to-r from-primary-600 to-purple-600 mx-auto rounded-full"></div>
       </div>
 
       <div className="grid md:grid-cols-3 gap-8">
         {skillCategories.map((category, idx) => (
           <div
             key={idx}
-            className="card p-6 hover:scale-105 transition-transform duration-300"
+            className="card p-6 hover:scale-105 transition-all duration-500 animate-fade-in-up"
             style={{ animationDelay: `${idx * 100}ms` }}>
-            <h3 className="text-xl font-bold mb-6 text-center">
+            <h3 className="text-xl font-bold mb-6 text-center gradient-text">
               {category.title}
             </h3>
             <div className="space-y-4">
               {category.skills.map((skill, skillIdx) => (
                 <div
                   key={skillIdx}
-                  className="group hover:bg-gray-50 p-2 rounded-lg transition-all">
+                  className="group hover:bg-gradient-to-r hover:from-primary-50 hover:to-purple-50 p-3 rounded-lg transition-all duration-300">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
                       <skill.icon
-                        className={`${skill.color} group-hover:scale-125 transition-transform`}
-                        size={20}
+                        className={`${skill.color} group-hover:scale-125 transition-transform duration-300`}
+                        size={24}
                       />
-                      <span className="font-medium">{skill.name}</span>
+                      <span className="font-semibold">{skill.name}</span>
                     </div>
-                    <span className="text-sm text-gray-600 font-semibold">
+                    <span className="text-sm text-gray-600 font-bold">
                       {skill.level}%
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                  <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden shadow-inner">
                     <div
-                      className={`bg-gradient-to-r from-primary-500 to-primary-600 h-2 rounded-full transition-all duration-1000 ${
+                      className={`bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 h-2.5 rounded-full transition-all duration-1000 shadow-lg ${
                         isVisible ? "animate-progress" : "w-0"
                       }`}
                       style={{
@@ -146,8 +146,10 @@ const Skills = () => {
         ))}
       </div>
 
-      <div className="mt-12 text-center">
-        <h3 className="text-xl font-semibold mb-4">Core Concepts</h3>
+      <div className="mt-12 text-center animate-fade-in-up animation-delay-600">
+        <h3 className="text-xl font-semibold mb-4 gradient-text">
+          Core Concepts
+        </h3>
         <div className="flex flex-wrap justify-center gap-3">
           {[
             "REST APIs",
@@ -159,7 +161,7 @@ const Skills = () => {
           ].map((concept, idx) => (
             <span
               key={idx}
-              className="px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium hover:bg-primary-200 hover:scale-110 transition-all cursor-default"
+              className="px-5 py-2 glass-effect rounded-full text-sm font-semibold hover:scale-110 transition-all cursor-default animate-fade-in"
               style={{ animationDelay: `${idx * 50}ms` }}>
               {concept}
             </span>
