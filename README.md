@@ -303,9 +303,9 @@ MIT License - feel free to use this for your own portfolio!
 Barento Hashum
 
 - Email: barentohashum11@gmail.com
-- GitHub: github.com/Barento999
+- GitHub: https://github.com/Barento999
 - LinkedIn: https://www.linkedin.com/in/barento-hashum-2a67221a6
-- Telegram: 
+- Telegram: https://t.me/barento11
 
 ---
 
