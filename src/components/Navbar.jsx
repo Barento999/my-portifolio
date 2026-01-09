@@ -38,10 +38,11 @@ const Navbar = () => {
     setTimeout(() => {
       const element = document.getElementById(id);
       if (element) {
-        const isMobile = window.innerWidth < 768;
-        const navbarHeight = isMobile ? 80 : 80; // Extra offset for mobile
+        const navbarHeight = 64; // h-16 = 64px
+
+        // Get the element's position relative to the document
         const elementPosition =
-          element.getBoundingClientRect().top + window.scrollY;
+          element.getBoundingClientRect().top + window.pageYOffset;
         const offsetPosition = elementPosition - navbarHeight;
 
         window.scrollTo({
@@ -49,7 +50,7 @@ const Navbar = () => {
           behavior: "smooth",
         });
       }
-    }, 100);
+    }, 150);
   };
 
   return (
