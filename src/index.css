@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-padding-top: 80px;
+  }
+
   body {
     @apply bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 text-gray-900;
     background-attachment: fixed;
@@ -171,6 +175,10 @@
 
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20;
+    scroll-margin-top: 80px;
+  }
+
+  section {
     scroll-margin-top: 80px;
   }
 

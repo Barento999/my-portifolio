@@ -32,11 +32,24 @@ const Navbar = () => {
   };
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-      setIsOpen(false);
-    }
+    setIsOpen(false);
+
+    // Small delay to allow mobile menu to close first
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const isMobile = window.innerWidth < 768;
+        const navbarHeight = isMobile ? 80 : 80; // Extra offset for mobile
+        const elementPosition =
+          element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - navbarHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }, 100);
   };
 
   return (
