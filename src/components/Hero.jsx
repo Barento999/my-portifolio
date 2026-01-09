@@ -53,7 +53,10 @@ const Hero = () => {
   }, [typedText, isDeleting, currentRoleIndex, roles]);
 
   const scrollToSection = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (

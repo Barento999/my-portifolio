@@ -160,22 +160,27 @@ const Skills = () => {
 
       <div className="mt-12 text-center animate-fade-in-up animation-delay-600">
         <h3 className="text-xl font-semibold mb-4 gradient-text">
-          Core Concepts
+          Core Concepts & Expertise
         </h3>
         <div className="flex flex-wrap justify-center gap-3">
           {[
-            "REST APIs",
-            "CRUD Operations",
-            "JWT Authentication",
-            "Responsive Design",
-            "Git Version Control",
-            "Agile Methodology",
+            { name: "REST APIs", icon: "🔌" },
+            { name: "CRUD Operations", icon: "📝" },
+            { name: "JWT Authentication", icon: "🔐" },
+            { name: "Responsive Design", icon: "📱" },
+            { name: "Git Version Control", icon: "🔀" },
+            { name: "Agile Methodology", icon: "🚀" },
+            { name: "Database Design", icon: "🗄️" },
+            { name: "API Integration", icon: "🔗" },
           ].map((concept, idx) => (
             <span
               key={idx}
-              className="px-5 py-2 glass-effect rounded-full text-sm font-semibold dark:text-gray-200 hover:scale-110 transition-all cursor-default animate-fade-in"
+              className="px-5 py-2 glass-effect rounded-full text-sm font-semibold dark:text-gray-200 hover:scale-110 hover:bg-gradient-to-r hover:from-primary-50 hover:to-purple-50 dark:hover:from-primary-900/30 dark:hover:to-purple-900/30 transition-all cursor-default animate-fade-in group"
               style={{ animationDelay: `${idx * 50}ms` }}>
-              {concept}
+              <span className="mr-2 group-hover:scale-125 inline-block transition-transform">
+                {concept.icon}
+              </span>
+              {concept.name}
             </span>
           ))}
         </div>

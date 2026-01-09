@@ -25,7 +25,7 @@ const Footer = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-purple-400 rounded-xl blur-md opacity-50 group-hover:opacity-75 transition-opacity -z-10 animate-pulse"></div>
               </div>
             </div>
-            <h3 className="text-xl font-bold mb-2 bg-gradient-to-r from-primary-400 to-purple-400 bg-clip-text text-transparent">
+            <h3 className="text-xl font-bold mb-2 gradient-text">
               Barento Hashum
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -84,9 +84,8 @@ const Footer = () => {
           <p className="text-gray-500 text-sm flex items-center gap-2">
             Built with{" "}
             <Heart size={14} className="text-red-500 animate-pulse" /> using
-            <span className="text-cyan-400 font-semibold">React</span>,
-            <span className="text-green-400 font-semibold">Node.js</span> &
-            <span className="text-green-500 font-semibold">MongoDB</span>
+            <span className="text-cyan-400 font-semibold">React</span> &
+            <span className="text-cyan-400 font-semibold">Tailwind CSS</span>
           </p>
         </div>
       </div>

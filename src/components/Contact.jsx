@@ -49,69 +49,8 @@ const Contact = () => {
       </div>
 
       <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-        {/* Contact Info */}
-        <div className="animate-slide-in-left">
-          <h3 className="text-2xl font-bold mb-6 gradient-text">
-            Contact Information
-          </h3>
-
-          <div className="space-y-4">
-            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all duration-300 group">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
-                <Mail className="text-white" size={24} />
-              </div>
-              <div>
-                <h4 className="font-semibold mb-1 dark:text-gray-200">Email</h4>
-                <a
-                  href="mailto:barentohashum11@gmail.com"
-                  className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                  barentohashum11@gmail.com
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all duration-300 group">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
-                <Phone className="text-white" size={24} />
-              </div>
-              <div>
-                <h4 className="font-semibold mb-1 dark:text-gray-200">Phone</h4>
-                <a
-                  href="tel:+251930873999"
-                  className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                  +251 930 873 999
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all duration-300 group">
-              <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-primary-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
-                <MapPin className="text-white" size={24} />
-              </div>
-              <div>
-                <h4 className="font-semibold mb-1 dark:text-gray-200">
-                  Location
-                </h4>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Harar, Ethiopia
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-8 p-6 glass-effect rounded-2xl border-2 border-primary-200 dark:border-primary-800 animate-glow">
-            <h4 className="font-bold mb-2 gradient-text">
-              Open to Opportunities
-            </h4>
-            <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-              I'm actively seeking internship positions and freelance projects.
-              Let's build something amazing together!
-            </p>
-          </div>
-        </div>
-
         {/* Contact Form */}
-        <div className="animate-slide-in-right">
+        <div className="animate-slide-in-left">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label
@@ -193,6 +132,67 @@ const Contact = () => {
               )}
             </button>
           </form>
+        </div>
+
+        {/* Contact Info */}
+        <div className="animate-slide-in-right">
+          <h3 className="text-2xl font-bold mb-6 gradient-text">
+            Contact Information
+          </h3>
+
+          <div className="space-y-4">
+            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all duration-300 group">
+              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
+                <Mail className="text-white" size={24} />
+              </div>
+              <div>
+                <h4 className="font-semibold mb-1 dark:text-gray-200">Email</h4>
+                <a
+                  href="mailto:barentohashum11@gmail.com"
+                  className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                  barentohashum11@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all duration-300 group">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
+                <Phone className="text-white" size={24} />
+              </div>
+              <div>
+                <h4 className="font-semibold mb-1 dark:text-gray-200">Phone</h4>
+                <a
+                  href="tel:+251930873999"
+                  className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                  +251 930 873 999
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all duration-300 group">
+              <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-primary-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
+                <MapPin className="text-white" size={24} />
+              </div>
+              <div>
+                <h4 className="font-semibold mb-1 dark:text-gray-200">
+                  Location
+                </h4>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Harar, Ethiopia
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 p-6 glass-effect rounded-2xl border-2 border-primary-200 dark:border-primary-800 animate-glow">
+            <h4 className="font-bold mb-2 gradient-text">
+              Open to Opportunities
+            </h4>
+            <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+              I'm actively seeking internship positions and freelance projects.
+              Let's build something amazing together!
+            </p>
+          </div>
         </div>
       </div>
     </section>
